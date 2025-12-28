@@ -9,16 +9,12 @@ pipeline{
           }
         stage('Build Image'){
           steps{
-              '''
                 sh "docker build -t jenkins-mini ."
-              '''
             }
           }
         stage('Execute Container'){
           steps{
-              '''
                 sh "docker run --rm jenkins-mini"
-              '''
             }
           }
       }
